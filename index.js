@@ -105,8 +105,8 @@ function filterByCountMinimum(animals, minimum) {
 }
 
 
-console.log(filterByCountMinimum(animals, 5));
-console.log(filterByCountMinimum([], 3));
+// console.log(filterByCountMinimum(animals, 5));
+// console.log(filterByCountMinimum([], 3));
 
 /**
  * FUNCTION DESCRIPTION
@@ -120,11 +120,25 @@ console.log(filterByCountMinimum([], 3));
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  // 1. Default Value and Output
+  if (animals.length === 0) {
+    return null
+  }
+  let maxAnimal = animals[0] 
+  // 2. Define the loop 
+  for (let i = 0; i < animals.length; i++) {
+    // 3. Accumulate 
+    const animal = animals[i]
+    if (animal.count > maxAnimal.count) {
+      maxAnimal = animal
+    }
+  }
+  return maxAnimal
+}
 
-
-getMostCommonAnimal(animals);
-getMostCommonAnimal([])
+// console.log(getMostCommonAnimal(animals));
+// console.log(getMostCommonAnimal([]))
 
 
 // Do not change anything below this line.
